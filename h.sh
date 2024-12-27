@@ -1,10 +1,5 @@
 #!/bin/bash
 
-error() {
-    echo -e "\e[1;31m[ERROR]\e[0m $1" | tee "$TMP/log.log"
-    exit 1
-}
-
 ######################
 #     CONSTANTES     #
 ######################
@@ -27,6 +22,11 @@ TMP=$(mktemp -d)
 ## Log to std in ##
 log() {
     echo -e "\e[1;32m[INFO]\e[0m $1" | tee "$TMP/log.log"
+}
+
+error() {
+    echo -e "\e[1;31m[ERROR]\e[0m $1" | tee "$TMP/log.log"
+    exit 1
 }
 
 ## Install dep and setup service ##
@@ -180,6 +180,7 @@ setup_ssl() {
     done
 }
 
+
 #################
 #     MAIN      #
 #################
@@ -197,3 +198,4 @@ honey_nginx
 honey_redis
 service_start_and_enable
 
+service_verif
