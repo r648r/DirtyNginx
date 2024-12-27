@@ -176,8 +176,8 @@ setup_ssl() {
 #################
 # Checks
 [ "$EUID" -ne 0 ] && error "Veuillez exécuter ce script en tant que root."
-ping -c 1 8.8.8.8 > /dev/null 2>&1 || error "Pas de connexion Internet."
-ping -c  google.jp > /dev/null 2>&1 || error "La résolution des noms de domaine échoue."
+ping -c 1 8.8.8.8 > /dev/null 2>&1 || error "Internet failed"
+ping -c 1 google.jp > /dev/null || error "DNS failed"
 
 # Init
 setup_ssl
