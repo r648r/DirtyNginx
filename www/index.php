@@ -29,10 +29,4 @@
         </pre>
     </div>
 </body>
-<script>
-fetch('http://172.17.13.222/HoneyPotsCustom500', {
-  method: 'GET',
-  mode: 'no-cors',
-})
-</script>
 </html>
