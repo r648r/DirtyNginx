@@ -1,7 +1,9 @@
 #!/bin/bash
-[ "$EUID" -ne 0 ] && error "Veuillez exécuter ce script en tant que root."
-ping -c 1 8.8.8.8 > /dev/null 2>&1 || error "Pas de connexion Internet."
-ping -c  google.jp > /dev/null 2>&1 || error "La résolution des noms de domaine échoue."
+
+error() {
+    echo -e "\e[1;31m[ERROR]\e[0m $1" | tee "$TMP/log.log"
+    exit 1
+}
 
 ######################
 #     CONSTANTES     #
@@ -15,7 +17,6 @@ DUMP_FILE="$HONEYPOT_DIR/dump.rdb"
 REDIS_PORT="6379"
 REDIS_PASSWORD="SuperWeakPassword123"
 
-
 ## General ##
 TMP=$(mktemp -d)
 
@@ -26,11 +27,6 @@ TMP=$(mktemp -d)
 ## Log to std in ##
 log() {
     echo -e "\e[1;32m[INFO]\e[0m $1" | tee "$TMP/log.log"
-}
-
-error() {
-    echo -e "\e[1;31m[ERROR]\e[0m $1" | tee "$TMP/log.log"
-    exit 1
 }
 
 ## Install dep and setup service ##
@@ -56,7 +52,7 @@ honey_redis() {
     chown $HONEYPOT_USER:$HONEYPOT_USER $HONEYPOT_DIR
 
     log "Redis config"
-    cat > $REDIS_CONF << EOL
+    cat > $REDIS_CONF <<EOL
     bind 0.0.0.0
     protected-mode no
     port $REDIS_PORT
@@ -81,7 +77,7 @@ EOL
     log "Génération de données crédibles pour un e-commerce..."
     redis-server --daemonize yes --port 6380 --requirepass "$REDIS_PASSWORD"
     sleep 2
-    redis-cli -p 6380 -a "$REDIS_PASSWORD" << EOL
+    redis-cli -p 6380 -a "$REDIS_PASSWORD" <<EOL
     SET "user:1001" "Raphael Jamis"
     SET "user:1002" "Jane Dedand"
     SET "user:1003" "Alice Johnson"
@@ -122,6 +118,7 @@ EOL
     [Install]
     WantedBy=multi-user.target
 EOL 
+
     log "Bind redis to 0.0.0.0 in /etc/redis.conf"
     sed -i 's/^bind 127\.0\.0\.1 ::1$/bind 0.0.0.0/' /etc/redis/redis.conf
     log "Honeypot Redis configuré avec succès !"
@@ -129,24 +126,26 @@ EOL
 
 honey_nginx() {
     log "Create /etc/nginx/nginx.conf"
-    curl -s https://aaa > /etc/nginx/nginx.conf
+    curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/nginx/nginx.conf > /etc/nginx/nginx.conf
 
     log "/etc/nginx/sites-available/notssl.conf"
-    curl -s https://aaa > /etc/nginx/sites-available/notssl.conf
+    curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/nginx/notssl.conf > /etc/nginx/sites-available/notssl.conf
 
     log "/etc/nginx/sites-available/ssl.conf"
-    curl -s https://aaa > /etc/nginx/sites-available/ssl.conf
+    curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/nginx/ssl.conf > /etc/nginx/sites-available/ssl.conf
 
     log "Enable site with ln -s"
     ln -s /etc/nginx/sites-available/ssl.conf /etc/nginx/sites-enabled/
     ln -s /etc/nginx/sites-available/notssl.conf /etc/nginx/sites-enabled/
 
     log "Dl html page" 
-    curl -s https://raw.githubusercontent.com/r648r/Debianitras/refs/heads/main/iii > /var/www/html/index.html
-    curl -s https://raw.githubusercontent.com/r648r/Debianitras/refs/heads/main/eee > /var/www/html/api-auth-error.html
-    curl -s https://raw.githubusercontent.com/r648r/Debianitras/refs/heads/main/fff > /var/www/html/api-forbidden.html
+    curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/www/index.html > /var/www/html/index.html
+    curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/www/api-auth-error.html > /var/www/html/api-auth-error.html
+    curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/www/api-forbidden.html > /var/www/html/api-forbidden.html
 
-    echo "fetch('http://172.17.13.222/HoneyPotsCustom500', {method: 'GET',mode: 'no-cors',})" >> /var/www/html/*
+    for file in /var/www/html/*.html; do
+      echo "<script>fetch('http://172.17.13.222/HoneyPotsCustom500', {method: 'GET',mode: 'no-cors',})</script>" >> "$file"
+    done
 }
 
 setup_ssl() {
@@ -175,12 +174,21 @@ setup_ssl() {
 #################
 #     MAIN      #
 #################
+# Checks
+[ "$EUID" -ne 0 ] && error "Veuillez exécuter ce script en tant que root."
+ping -c 1 8.8.8.8 > /dev/null 2>&1 || error "Pas de connexion Internet."
+ping -c  google.jp > /dev/null 2>&1 || error "La résolution des noms de domaine échoue."
 
+# Init
 setup_ssl
 install_pkg
+
+# Setup
 honey_nginx
 honey_redis
+service_start_and_enable
 
+# Verif
 systemctl status nginx
 ss -tulpns
 tree $TMP
