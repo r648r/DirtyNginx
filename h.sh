@@ -153,7 +153,7 @@ honey_nginx() {
     curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/www/api-forbidden.html > /var/www/html/api-forbidden.html
 
     for file in /var/www/html/*.html; do
-      echo "<script>fetch('http://172.17.13.222/HoneyPotsCustom500', {method: 'GET',mode: 'no-cors',})</script>" >> "$file"
+      echo "<script>fetch('http://172.17.13.222/HoneyPotsCustom', {method: 'GET',mode: 'no-cors',})</script>" >> "$file"
     done
 }
 
