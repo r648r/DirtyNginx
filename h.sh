@@ -44,6 +44,15 @@ service_start_and_enable() {
     systemctl restart nginx redis-server redis_honeypot redis     
 }
 
+service_verif() {
+    systemctl status nginx redis redis_honeypot
+    echo "============================================="
+    ss -tulns
+    echo "============================================="
+    tree $TMP
+}
+
+
 ## Honey setup ##
 honey_redis() {
     log "Create user for redis honeypots"
@@ -52,7 +61,7 @@ honey_redis() {
     chown $HONEYPOT_USER:$HONEYPOT_USER $HONEYPOT_DIR
 
     log "Redis config"
-    cat > $REDIS_CONF <<EOL
+    cat > $REDIS_CONF<<EOL
     bind 0.0.0.0
     protected-mode no
     port $REDIS_PORT
@@ -77,7 +86,7 @@ EOL
     log "Génération de données crédibles pour un e-commerce..."
     redis-server --daemonize yes --port 6380 --requirepass "$REDIS_PASSWORD"
     sleep 2
-    redis-cli -p 6380 -a "$REDIS_PASSWORD" <<EOL
+    redis-cli -p 6380 -a "$REDIS_PASSWORD"<<EOL
     SET "user:1001" "Raphael Jamis"
     SET "user:1002" "Jane Dedand"
     SET "user:1003" "Alice Johnson"
@@ -99,7 +108,7 @@ EOL
     sleep 2
 
     log "Configuration du service systemd pour le honeypot..."
-    cat > /etc/systemd/system/redis_honeypot.service <<EOL
+    cat > /etc/systemd/system/redis_honeypot.service<<EOL
     [Unit]
     Description=Redis Honeypot Service
     After=network.target
@@ -117,7 +126,7 @@ EOL
 
     [Install]
     WantedBy=multi-user.target
-EOL 
+EOL
 
     log "Bind redis to 0.0.0.0 in /etc/redis.conf"
     sed -i 's/^bind 127\.0\.0\.1 ::1$/bind 0.0.0.0/' /etc/redis/redis.conf
@@ -188,7 +197,3 @@ honey_nginx
 honey_redis
 service_start_and_enable
 
-# Verif
-systemctl status nginx
-ss -tulpns
-tree $TMP
