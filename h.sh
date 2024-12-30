@@ -40,8 +40,11 @@ install_pkg() {
 
 service_start_and_enable() {
     systemctl daemon-reload
-    systemctl enable nginx redis-server
-    systemctl restart nginx redis-server redis_honeypot redis     
+    systemctl disable redis-server redis
+    systemctl stop redis-server redis 
+    systemctl enable nginx redis_honeypot
+    systemctl restart nginx redis_honeypot
+
 }
 
 service_verif() {
