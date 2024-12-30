@@ -55,6 +55,14 @@ service_verif() {
     tree $TMP
 }
 
+footprint() {
+    journalctl --vacuum-time=1h
+    rm -rf /home/*/.ssh/known_hosts
+    rm -f /var/log/wtmp /var/log/btmp /var/log/lastlog /root/.bash_history
+    history -c
+    history -w
+}
+
 
 ## Honey setup ##
 honey_redis() {
@@ -200,5 +208,6 @@ install_pkg
 honey_nginx
 honey_redis
 service_start_and_enable
+footprint
 
 service_verif
