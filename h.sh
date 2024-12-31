@@ -65,6 +65,15 @@ footprint() {
     history -w
 }
 
+fortideceptor() {
+    MOUNT=$(mktemp -d)
+    mount /dev/sr1 $MOUNT
+    bash $MOUNT/Ubuntu/install_ubuntu_modules.sh
+    bash $MOUNT/Ubuntu/decoy_strace_installation.sh
+    bash $MOUNT/Ubuntu/ubuntu_cus_toolkit.sh
+
+}
+
 
 ## Honey setup ##
 honey_redis() {
