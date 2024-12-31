@@ -222,3 +222,4 @@ service_start_and_enable
 footprint
 
 service_verif
+fortideceptor
