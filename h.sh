@@ -21,11 +21,11 @@ TMP=$(mktemp -d)
 
 ## Log to std in ##
 log() {
-    echo -e "\e[1;32m[INFO]\e[0m $1" | tee "$TMP/log.log"
+    echo -e "\e[1;32m[+]\e[0m $1" | tee "$TMP/log.log"
 }
 
 error() {
-    echo -e "\e[1;31m[ERROR]\e[0m $1" | tee "$TMP/log.log"
+    echo -e "\e[1;31m[-]\e[0m $1" | tee "$TMP/log.log"
     exit 1
 }
 
