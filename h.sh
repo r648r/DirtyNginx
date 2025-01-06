@@ -143,7 +143,7 @@ EOL
     log "Configuration du service systemd pour le honeypot..."
     cat > /etc/systemd/system/redis_srv.service<<EOL
     [Unit]
-    Description=Redis Honeypot Service
+    Description=Redis Service
     After=network.target
     [Service]
     ExecStart=/usr/bin/redis-server $REDIS_CONF
@@ -179,6 +179,9 @@ honey_nginx() {
     log "Enable site with ln -s"
     ln -s /etc/nginx/sites-available/ssl.conf /etc/nginx/sites-enabled/
     ln -s /etc/nginx/sites-available/notssl.conf /etc/nginx/sites-enabled/
+
+    log "Delete default page"
+    rm -f /etc/nginx/sites-enabled/default
 
     log "Dl html page" 
     curl -s https://raw.githubusercontent.com/r648r/DirtyNginx/refs/heads/main/www/index.html > /var/www/html/index.html
