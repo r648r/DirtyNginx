@@ -14,7 +14,7 @@ REDIS_PASSWORD="SuperWeakPassword123"
 
 ## General ##
 TMP=$(mktemp -d)
-read -p -p "non-root username: " USER
+read -p "non-root username: " USER
 
 ######################
 #     FUNCTIONS      #
@@ -59,12 +59,19 @@ service_verif() {
 }
 
 footprint() {
+    log "Clear log"
     journalctl --vacuum-time=1h
     rm -f /var/log/wtmp /var/log/btmp /var/log/lastlog /root/.bash_history
+
+    log "Replace history"
     history -c
     history -w
     curl -s https://raw.githubusercontent.com/r648r/DirtyNginx/refs/heads/main/history/root.txt >> /root/.bash_history
     curl -s https://raw.githubusercontent.com/r648r/DirtyNginx/refs/heads/main/history/user.txt >> /home/$USER/.bash_history
+    chmod 444 /home/$USER/.bash_history
+    chown $USER:$USER /home/$USER/.bash_history
+
+    # Change password
     passwd root
     passwd $USER
 }
