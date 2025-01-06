@@ -63,7 +63,6 @@ footprint() {
     history -c
     history -w
     passwd root
-    passwd ldlc
 }
 
 fortideceptor() {
