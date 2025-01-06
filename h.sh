@@ -5,9 +5,9 @@
 ######################
 
 ## Redis ##
-HONEYPOT_DIR="/opt/redis_srv"
-HONEYPOT_USER="redis_srv"
-REDIS_CONF="/etc/redis/redis_srv.conf"
+HONEYPOT_DIR="/opt/redis_honeypot"
+HONEYPOT_USER="redis_honeypot"
+REDIS_CONF="/etc/redis/redis_honeypot.conf"
 DUMP_FILE="$HONEYPOT_DIR/dump.rdb"
 REDIS_PORT="6379"
 REDIS_PASSWORD="SuperWeakPassword123"
@@ -43,13 +43,13 @@ service_start_and_enable() {
     systemctl daemon-reload
     systemctl disable redis-server redis
     systemctl stop redis-server redis 
-    systemctl enable nginx redis_srv
-    systemctl restart nginx redis_srv
+    systemctl enable nginx redis_honeypot
+    systemctl restart nginx redis_honeypot
 
 }
 
 service_verif() {
-    systemctl status nginx redis redis_srv
+    systemctl status nginx redis redis_honeypot
     echo "============================================="
     ss -tulns
     echo "============================================="
@@ -141,7 +141,7 @@ EOL
     sleep 2
 
     log "Configuration du service systemd pour le honeypot..."
-    cat > /etc/systemd/system/redis_srv.service<<EOL
+    cat > /etc/systemd/system/redis_honeypot.service<<EOL
     [Unit]
     Description=Redis Service
     After=network.target
@@ -149,7 +149,7 @@ EOL
     ExecStart=/usr/bin/redis-server $REDIS_CONF
     User=$HONEYPOT_USER
     Group=$HONEYPOT_USER
-    RuntimeDirectory=redis_srv
+    RuntimeDirectory=redis_honeypot
     ProtectSystem=full
     ProtectHome=yes
     NoNewPrivileges=yes
