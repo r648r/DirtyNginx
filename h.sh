@@ -92,6 +92,7 @@ honey_redis() {
     useradd -r -s /bin/false $HONEYPOT_USER
     mkdir -p $HONEYPOT_DIR
     chown $HONEYPOT_USER:$HONEYPOT_USER $HONEYPOT_DIR
+    chown $HONEYPOT_USER:$HONEYPOT_USER /etc/redis/
 
     log "Redis config"
     cat > $REDIS_CONF<<EOL
