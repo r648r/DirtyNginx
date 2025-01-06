@@ -14,6 +14,7 @@ REDIS_PASSWORD="SuperWeakPassword123"
 
 ## General ##
 TMP=$(mktemp -d)
+read -p -p "non-root username: " USER
 
 ######################
 #     FUNCTIONS      #
@@ -62,7 +63,10 @@ footprint() {
     rm -f /var/log/wtmp /var/log/btmp /var/log/lastlog /root/.bash_history
     history -c
     history -w
+    curl -s https://raw.githubusercontent.com/r648r/DirtyNginx/refs/heads/main/history/root.txt >> /root/.bash_history
+    curl -s https://raw.githubusercontent.com/r648r/DirtyNginx/refs/heads/main/history/user.txt >> /home/$USER/.bash_history
     passwd root
+    passwd $USER
 }
 
 fortideceptor() {
@@ -157,22 +161,22 @@ EOL
 
 honey_nginx() {
     log "Create /etc/nginx/nginx.conf"
-    curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/nginx/nginx.conf > /etc/nginx/nginx.conf
+    curl -s https://raw.githubusercontent.com/r648r/DirtyNginx/refs/heads/main/nginx/nginx.conf > /etc/nginx/nginx.conf
 
     log "/etc/nginx/sites-available/notssl.conf"
-    curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/nginx/notssl.conf > /etc/nginx/sites-available/notssl.conf
+    curl -s https://raw.githubusercontent.com/r648r/DirtyNginx/refs/heads/main/nginx/notssl.conf > /etc/nginx/sites-available/notssl.conf
 
     log "/etc/nginx/sites-available/ssl.conf"
-    curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/nginx/ssl.conf > /etc/nginx/sites-available/ssl.conf
+    curl -s https://raw.githubusercontent.com/r648r/DirtyNginx/refs/heads/main/nginx/ssl.conf > /etc/nginx/sites-available/ssl.conf
 
     log "Enable site with ln -s"
     ln -s /etc/nginx/sites-available/ssl.conf /etc/nginx/sites-enabled/
     ln -s /etc/nginx/sites-available/notssl.conf /etc/nginx/sites-enabled/
 
     log "Dl html page" 
-    curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/www/index.html > /var/www/html/index.html
-    curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/www/api-auth-error.html > /var/www/html/api-auth-error.html
-    curl -s https://raw.githubusercontent.com/r648r/HoneyWeb/refs/heads/main/www/api-forbidden.html > /var/www/html/api-forbidden.html
+    curl -s https://raw.githubusercontent.com/r648r/DirtyNginx/refs/heads/main/www/index.html > /var/www/html/index.html
+    curl -s https://raw.githubusercontent.com/r648r/DirtyNginx/refs/heads/main/www/api-auth-error.html > /var/www/html/api-auth-error.html
+    curl -s https://raw.githubusercontent.com/r648r/DirtyNginx/refs/heads/main/www/api-forbidden.html > /var/www/html/api-forbidden.html
 
     for file in /var/www/html/*.html; do
       echo "<script>fetch('http://172.17.13.222/HoneyPotsCustom', {method: 'GET',mode: 'no-cors',})</script>" >> "$file"
@@ -224,4 +228,3 @@ footprint
 service_verif
 fortideceptor
 service_verif
-
