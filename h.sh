@@ -59,18 +59,19 @@ service_verif() {
 
 footprint() {
     journalctl --vacuum-time=1h
-    rm -rf /home/*/.ssh/known_hosts
     rm -f /var/log/wtmp /var/log/btmp /var/log/lastlog /root/.bash_history
     history -c
     history -w
+    passwd root
+    passwd ldlc
 }
 
 fortideceptor() {
     MOUNT=$(mktemp -d)
     mount /dev/sr1 $MOUNT
-    bash $MOUNT/Ubuntu/install_ubuntu_modules.sh
-    bash $MOUNT/Ubuntu/decoy_strace_installation.sh
-    bash $MOUNT/Ubuntu/ubuntu_cus_toolkit.sh
+    bash $MOUNT/Ubuntu/install_ubuntu_modules.sh | tee "$TMP/forti.log"
+    bash $MOUNT/Ubuntu/decoy_strace_installation.sh | tee "$TMP/forti.log"
+    bash $MOUNT/Ubuntu/ubuntu_cus_toolkit.sh | tee "$TMP/forti.log"
 
 }
 
