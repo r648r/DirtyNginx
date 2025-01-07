@@ -1,6 +1,6 @@
 # DirtyNginx — Redis & Nginx Honeypot
 
-🇬🇧 **English** · [🇫🇷 Français](README.fr.md)
+**English** · [Français](README.fr.md)
 
 Deployment script that turns an Ubuntu host into a **deceptive honeypot**: a fake
 **Redis** database and an **Nginx** server advertising old, "vulnerable" software.
