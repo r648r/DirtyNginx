@@ -1,40 +1,37 @@
-# DirtyNginx — Honeypot Redis & Nginx
+# DirtyNginx — Redis & Nginx Honeypot
 
-🇫🇷 **Français** · [🇬🇧 English](README.en.md)
+🇬🇧 **English** · [🇫🇷 Français](README.fr.md)
 
-Script de déploiement qui transforme un hôte Ubuntu en **honeypot trompeur** :
-une fausse base **Redis** et un serveur **Nginx** qui annonce de vieux logiciels
-« vulnérables ». Un attaquant qui le scanne trouve des cibles juteuses et une base
-exposée — le tout factice, le tout journalisé.
+Deployment script that turns an Ubuntu host into a **deceptive honeypot**: a fake
+**Redis** database and an **Nginx** server advertising old, "vulnerable" software.
+An attacker who scans it finds juicy targets and an exposed database — all fake,
+all logged.
 
-## Démo — ce que voit un attaquant
+## Demo — what an attacker sees
 
-![Recon du honeypot](docs/honeypot-recon.gif)
+![Honeypot recon](docs/honeypot-recon.gif)
 
-Recon contre le honeypot : bannières usurpées (**Symfony 2.7 / PHP 5.4.0**, Apache,
-Varnish) et un **Redis** « exposé » rempli de fausses données e-commerce. Chaque
-bannière est forgée et chaque enregistrement est un leurre — pendant ce temps, la
-recon de l'attaquant est loggée.
+Recon against the honeypot: spoofed banners (**Symfony 2.7 / PHP 5.4.0**, Apache,
+Varnish) and an "exposed" **Redis** full of fake e-commerce data. Every banner is
+forged and every record is bait — meanwhile the attacker's recon is logged.
 
-## Vue d'ensemble
+## Overview
 
-Le script met en place des services honeypot **Redis** et **Nginx** qui simulent
-des systèmes vulnérables à des fins de surveillance et d'analyse.
+The script sets up **Redis** and **Nginx** honeypot services that simulate
+vulnerable systems for monitoring and analysis.
 
-## Fonctionnalités
+## Features
 
-1. **Installation automatisée** — installe et configure Redis, Nginx, OpenSSL.
-2. **Honeypot Redis** — utilisateur de service isolé, fausses données
-   utilisateurs/produits/commandes, commandes sensibles verrouillées, unité
-   systemd durcie.
-3. **Honeypot Nginx** — SSL auto-signé, plusieurs pages statiques & d'erreur API,
-   et **faux en-têtes de versions vulnérables** (PHP, Varnish, Nginx, Symfony) ;
-   intègre des balises JS vers des endpoints de tracking externes.
-4. **Modules de déception** — intégration FortiDeceptor.
-5. **Gestion des logs** — efface et remplace logs/historiques pour masquer les
-   traces d'installation.
+1. **Automated setup** — installs and configures Redis, Nginx, OpenSSL.
+2. **Redis honeypot** — isolated service user, fake user/product/order data,
+   sensitive commands locked down, hardened systemd unit.
+3. **Nginx honeypot** — self-signed SSL, multiple static & API error pages, and
+   **fake vulnerable version headers** (PHP, Varnish, Nginx, Symfony); embeds JS
+   beacons to external tracking endpoints.
+4. **Deception modules** — FortiDeceptor integration.
+5. **Log management** — clears and replaces logs/histories to hide setup traces.
 
-## Installation
+## Install
 
 ```bash
 su -
@@ -42,9 +39,7 @@ curl -s https://raw.githubusercontent.com/r648r/DirtyNginx/main/install.sh -o in
 bash install.sh
 ```
 
-## Prérequis
+## Requirements
 
-- OS : `Ubuntu 20.04` ([pourquoi](https://docs.fortinet.com/document/fortideceptor/6.0.0/fortideceptor-customization-cookbook/89327/introduction))
-- Accès Internet · privilèges root
-
-> ⚠️ À déployer uniquement sur une infrastructure dont vous êtes responsable, à des fins défensives / de recherche.
+- OS: `Ubuntu 20.04` ([why](https://docs.fortinet.com/document/fortideceptor/6.0.0/fortideceptor-customization-cookbook/89327/introduction))
+- Internet access · root privileges
